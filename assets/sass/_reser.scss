@@ -1,6 +1,8 @@
+@charset "utf-8";
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
+
 /* 1.1. Eric Meyers Reset
    http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -28,19 +30,16 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* Force scrollbar */
-html {
-  overflow-y: scroll;
-}
+html { overflow-y: scroll; }
 
 /* Align radios and text inputs with their label */
-input[type=radio] {
-  vertical-align: text-bottom;
-}
+
+input[type='radio'] { vertical-align: text-bottom; }
 
 /* Hand cursor on clickable input elements */
 label,
-input[type=button],
-input[type=submit],
+input[type='button'],
+input[type='submit'],
 button {
   cursor: pointer;
 }
@@ -51,9 +50,7 @@ strong {
   font-size: inherit;
 }
 
-em {
-  font-style: italic;
-}
+em { font-style: italic; }
 
 img {
   width: 100%;
@@ -69,39 +66,30 @@ sup {
   line-height: 0;
 }
 
-sup {
-  top: -0.7em;
-}
-
-sub {
-  bottom: -0.25em;
-}
+sup { top: -.7em; }
+sub { bottom: -.25em; }
 
 /* 1.2. Clear Fix
    ========================== */
+
 .cf:before,
 .cf:after {
   display: table;
   content: " ";
 }
 
-.cf:after {
-  clear: both;
-}
-
-.cf {
-  *zoom: 1;
-}
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
 
 /*for all*/
 body {
   box-sizing: border-box;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-a {
+a { 
   display: inline-block;
-  text-decoration: none;
+  text-decoration: none; 
 }
 
 li {
@@ -112,44 +100,12 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 61%;
+  width: 61%; 
   margin: 0 auto;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+*{
+  @include  boxSizing(border-box);
   padding: 0;
   margin: 0;
 }
-
-/* header start here*/
-header .header1 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-header .header1 .wrapper {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-header .header1 .wrapper {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  align-items: center;
-}
-
-header .header1 {
-  background-color: #1A365B;
-}
-header .email, header .call {
-  color: #fff;
-  font-size: 11px;
-}
-/* header end here*/
-
-/*# sourceMappingURL=style.css.map */

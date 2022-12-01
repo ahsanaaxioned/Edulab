@@ -1,0 +1,32 @@
+/* header start here*/
+%flex-repeat{
+@include displayFlex();
+}
+%transition-repeat{
+  @include transition(all .4s ease-in-out);
+}
+%justify-repeat{
+  @include justify-content(space-between);
+}
+%align-repeat{
+  @include align-items(center);
+}
+header{
+  .header1{
+    background-color: $header-color;
+    .wrapper{
+      @extend %flex-repeat;
+      @extend %align-repeat;
+      @extend %justify-repeat;
+    }
+  }
+  .email{
+    color: $white;
+    @include font(11px);
+  }
+  .call{
+    @extend .email
+  }
+  
+}
+/* header end here*/
