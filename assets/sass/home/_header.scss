@@ -1,83 +1,182 @@
 /* header start here*/
-%flex-repeat{
-@include displayFlex();
+%flex-repeat {
+  @include displayFlex();
 }
-%transition-repeat{
+%relative{
+  @include position(relative);
+}
+
+%transition-repeat {
   @include transition(all .4s ease-in-out);
 }
-%justify-repeat{
+
+%justify-repeat {
   @include justify-content(space-between);
 }
-%align-repeat{
+
+%align-repeat {
   @include align-items(center);
 }
-header{
-  .header1{
+
+header {
+  .header1 {
     padding: 10px 0;
     background-color: $header-color;
-    .wrapper{
+
+    .wrapper {
       @extend %flex-repeat;
       @extend %align-repeat;
       @extend %justify-repeat;
     }
   }
+
   .link {
     @extend %flex-repeat;
-    // @extend %justify-repeat;
     @include flex-basis(62.8%);
-}
-  .email{
+  }
+
+  .email {
     @extend %flex-repeat;
     @extend %align-repeat;
     color: $white;
-    @include font(10px,400);
-    &::before{
+    @include font(10px, 400);
+    @extend %transition-repeat;
+    @include for-hover-only{
+      &:hover{
+        color: $caption-color;
+      }
+    }
+
+    &::before {
       margin-right: 10px;
-     @include contentBefore(\f0e0,$float:left);
-     @include font(9px,$family:"FontAwesome");
+      @include contentBefore(\f0e0, $float: left);
+      @include font(9px, $family: "FontAwesome");
 
     }
   }
-  .call{
+
+  .call {
     margin-left: 6%;
     @extend .email;
-    &::before{
+
+    &::before {
       margin-right: 9px;
-    @include contentBefore(\f879);
+      @include contentBefore(\f879);
     }
   }
-  .social-list{
+
+  .social-list {
     @extend %flex-repeat;
-    // @extend %align-repeat;
     @include flex-basis(15%);
     gap: 14px;
   }
-  .social-item{
+
+  .social-item {
     margin-left: 2%;
   }
-  .social-item:first-child{
+
+  .social-item:first-child {
     margin: 0;
   }
-  .icon{
+
+  .icon {
     @extend %flex-repeat;
     @extend %align-repeat;
     color: $white;
     text-indent: -9999px;
-    @each $name,$value in $icon {
-      &.#{$name}::before{
+    @extend %transition-repeat;
+    @include for-hover-only{
+      &:hover{
+        color: $caption-color;
+      }
+    }
+
+    @each $name,
+    $value in $icon {
+      &.#{$name}::before {
         content: $value;
       }
     }
-    &::before{
-      @include contentBefore("",$float:left);
-      @include font(9px,$family:"FontAwesome");
+
+    &::before {
+      @include contentBefore("", $float: left);
+      @include font(9px, $family: "FontAwesome");
       text-indent: 0;
     }
   }
-  .login{
+
+  .login {
     color: $white;
     @include font(10px);
+    @extend %transition-repeat;
+    @include for-hover-only{
+      &:hover{
+        color: $caption-color;
+      }
+    }
   }
   
+  .header2{
+    .wrapper{
+      @extend %flex-repeat;
+      @extend %align-repeat;
+      @extend %justify-repeat;
+    }
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 18px;
+      height: 2px;
+      margin: 5px;
+      display: block;
+      background-color: $header-color;
+      text-indent: -9999px;
+      @extend %transition-repeat;
+    }
+    .navbar{
+      @include flex-basis(49.5%);
+    }
+    .nav-list{
+      @extend %flex-repeat;
+      @extend %align-repeat;
+      gap: 12px;
+    }
+    .nav-item:nth-child(2){
+      padding-right: 16px;
+    }
+    .nav-item:nth-child(3){
+      padding-right: 16px;
+    }
+    .nav-link{
+      padding: 5px;
+      color: $nav-anc;
+      @include font(14px);
+      @extend %transition-repeat;
+      @include for-hover-only{
+        &:hover{
+          color: $caption-color;
+        }
+      }
+    }
+    .down{
+      @extend %relative;
+      &::before{
+        @include contentBefore(\f078, $float: right);
+        @include position(absolute,$top:36%,$right:-23%);
+        color: #363636;
+        @include font(10px, $family: "FontAwesome");
+      }
+      @include for-hover-only{
+        &:hover::before{
+          color: $caption-color;
+        }
+      }
+    }
+  }
+
 }
+
 /* header end here*/
