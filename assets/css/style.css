@@ -124,21 +124,21 @@ li {
 }
 
 /* header start here*/
-header .header2 .nav-list, header .header2 .wrapper, header .icon, header .social-list, header .email, header .call, header .link, header .header1 .wrapper {
+.banner .slide-ctrl, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .social-list, header .email, header .call, header .link, header .header1 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .header2 .down {
+.banner .wrapper, header .header2 .down {
   position: relative;
 }
 
-header .header2 .nav-link, header .header2 .bar, header .login, header .icon, header .email, header .call {
+.banner .left, .banner .right, header .header2 .nav-link, header .header2 .bar, header .login, header .icon, header .email, header .call {
   transition: all 0.4s ease-in-out;
 }
 
-header .header2 .wrapper, header .header1 .wrapper {
+.banner .slide-ctrl, header .header2 .wrapper, header .header1 .wrapper {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -224,7 +224,7 @@ header .icon.skype::before {
 header .icon::before {
   content: "";
   float: left;
-  font-size: 9px;
+  font-size: 10px;
   font-family: "FontAwesome";
   text-indent: 0;
 }
@@ -289,5 +289,65 @@ header .header2 .down::before {
 }
 
 /* header end here*/
+.banner .wrapper {
+  width: 100%;
+}
+.banner .slider-item {
+  display: none;
+}
+.banner .slider-item figure img {
+  max-height: 585px;
+  height: 100%;
+  filter: brightness(0.6);
+}
+.banner .slider-item:nth-child(1) {
+  display: block;
+}
+.banner .slide-content {
+  position: absolute;
+  bottom: 389px;
+  left: 32.6%;
+  text-align: center;
+}
+.banner .banner-heading {
+  padding-bottom: 9px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+}
+.banner .description {
+  margin-left: 20px;
+  color: #fff;
+  font-size: 15px;
+}
+.banner .slide-ctrl {
+  width: 100%;
+  position: absolute;
+  bottom: 316px;
+  left: 0;
+}
+.banner .left, .banner .right {
+  margin-left: 2%;
+  text-indent: -9999px;
+}
+@media (min-width: 995px) {
+  .banner .left:hover::before, .banner .right:hover::before {
+    color: #090504;
+  }
+}
+.banner .left::before, .banner .right::before {
+  content: "\f053";
+  float: left;
+  color: #fff;
+  font-size: 20px;
+  font-family: "FontAwesome";
+  text-indent: 0;
+}
+.banner .right {
+  margin-right: 2%;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
 /*# sourceMappingURL=style.css.map */
