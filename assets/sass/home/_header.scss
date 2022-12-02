@@ -67,8 +67,8 @@ header {
 
   .social-list {
     @extend %flex-repeat;
-    @include flex-basis(15%);
-    gap: 14px;
+    @include flex-basis(20%);
+    gap: 12px;
   }
 
   .social-item {
