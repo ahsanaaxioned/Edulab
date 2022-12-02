@@ -13,6 +13,7 @@
 }
 header{
   .header1{
+    padding: 10px 0;
     background-color: $header-color;
     .wrapper{
       @extend %flex-repeat;
@@ -20,12 +21,62 @@ header{
       @extend %justify-repeat;
     }
   }
+  .link {
+    @extend %flex-repeat;
+    // @extend %justify-repeat;
+    @include flex-basis(62.8%);
+}
   .email{
+    @extend %flex-repeat;
+    @extend %align-repeat;
     color: $white;
-    @include font(11px);
+    @include font(10px,400);
+    &::before{
+      margin-right: 10px;
+     @include contentBefore(\f0e0,$float:left);
+     @include font(9px,$family:"FontAwesome");
+
+    }
   }
   .call{
-    @extend .email
+    margin-left: 6%;
+    @extend .email;
+    &::before{
+      margin-right: 9px;
+    @include contentBefore(\f879);
+    }
+  }
+  .social-list{
+    @extend %flex-repeat;
+    // @extend %align-repeat;
+    @include flex-basis(15%);
+    gap: 14px;
+  }
+  .social-item{
+    margin-left: 2%;
+  }
+  .social-item:first-child{
+    margin: 0;
+  }
+  .icon{
+    @extend %flex-repeat;
+    @extend %align-repeat;
+    color: $white;
+    text-indent: -9999px;
+    @each $name,$value in $icon {
+      &.#{$name}::before{
+        content: $value;
+      }
+    }
+    &::before{
+      @include contentBefore("",$float:left);
+      @include font(9px,$family:"FontAwesome");
+      text-indent: 0;
+    }
+  }
+  .login{
+    color: $white;
+    @include font(10px);
   }
   
 }

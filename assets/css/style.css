@@ -124,7 +124,7 @@ li {
 }
 
 /* header start here*/
-header .header1 .wrapper {
+header .icon, header .social-list, header .email, header .call, header .link, header .header1 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,7 +136,7 @@ header .header1 .wrapper {
   justify-content: space-between;
 }
 
-header .header1 .wrapper {
+header .icon, header .email, header .call, header .header1 .wrapper {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -144,12 +144,77 @@ header .header1 .wrapper {
 }
 
 header .header1 {
+  padding: 10px 0;
   background-color: #1A365B;
+}
+header .link {
+  -ms-flex-preferred-size: 62.8%;
+  flex-basis: 62.8%;
 }
 header .email, header .call {
   color: #fff;
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: 400;
 }
+header .email::before, header .call::before {
+  margin-right: 10px;
+  content: "\f0e0";
+  float: left;
+  font-size: 9px;
+  font-family: "FontAwesome";
+}
+header .call {
+  margin-left: 6%;
+}
+header .call::before {
+  margin-right: 9px;
+  content: "\f879";
+}
+header .social-list {
+  -ms-flex-preferred-size: 15%;
+  flex-basis: 15%;
+  gap: 14px;
+}
+header .social-item {
+  margin-left: 2%;
+}
+header .social-item:first-child {
+  margin: 0;
+}
+header .icon {
+  color: #fff;
+  text-indent: -9999px;
+}
+header .icon.whatsapp::before {
+  content: "\f232";
+}
+header .icon.google::before {
+  content: "\f0d5";
+}
+header .icon.facebook::before {
+  content: "\f082";
+}
+header .icon.messanger::before {
+  content: "\f39f";
+}
+header .icon.twitter::before {
+  content: "\f099";
+}
+header .icon.skype::before {
+  content: "\f17e";
+}
+header .icon::before {
+  content: "";
+  float: left;
+  font-size: 9px;
+  font-family: "FontAwesome";
+  text-indent: 0;
+}
+header .login {
+  color: #fff;
+  font-size: 10px;
+}
+
 /* header end here*/
 
 /*# sourceMappingURL=style.css.map */
