@@ -100,7 +100,7 @@ header {
 
     &::before {
       @include contentBefore("", $float: left);
-      @include font(9px, $family: "FontAwesome");
+      @include font(10px, $family: "FontAwesome");
       text-indent: 0;
     }
   }
