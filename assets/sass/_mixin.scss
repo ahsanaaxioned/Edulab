@@ -177,9 +177,9 @@
 }
 
 // mixin for box-shaddow
-@mixin boxShadow($value) {
-  -webkit-box-shadow: $value;
-  box-shadow: $value;
+@mixin boxShadow($value1,$value2) {
+  -webkit-box-shadow:($value1,$value2);
+  box-shadow: ($value1,$value2);
 }
 // mixin for hover
 @mixin for-hover-only {
