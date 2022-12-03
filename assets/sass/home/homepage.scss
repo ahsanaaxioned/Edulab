@@ -1,63 +1,179 @@
-.banner{
-  .wrapper{
-    width: 100%;  
+/*banner section start here*/
+.banner {
+  .wrapper {
+    width: 100%;
     @extend %relative;
   }
-  .slider-item{
+
+  .slider-item {
     display: none;
-    figure{
-      img{
+
+    figure {
+      img {
         max-height: 585px;
         height: 100%;
         filter: brightness(.6);
       }
     }
   }
-  .slider-item:nth-child(1){
+
+  .slider-item:nth-child(1) {
     display: block;
   }
-  .slide-content{
-    @include position(absolute,$bottom:389px,$left:32.6%);
+
+  .slide-content {
+    @include position(absolute, $bottom: 389px, $left: 32.6%);
     text-align: center;
   }
 
-  .banner-heading{
+  .banner-heading {
     padding-bottom: 9px;
     color: $white;
-    @include font(25px,600);
+    @include font(25px, 600);
   }
-  .description{
+
+  .description {
     margin-left: 20px;
     color: $white;
     @include font(15px);
   }
-  .slide-ctrl{
+
+  .slide-ctrl {
     width: 100%;
     @extend %flex-repeat;
     @extend %justify-repeat;
-    @include position(absolute,$bottom:316px,$left:0);
+    @include position(absolute, $bottom: 316px, $left: 0);
   }
 
-  .left{
+  .left {
     margin-left: 2%;
     text-indent: -9999px;
     @extend %transition-repeat;
-    @include for-hover-only{
-      &:hover::before{
+
+    @include for-hover-only {
+      &:hover::before {
         color: $heading-color;
       }
     }
-    &::before{
+
+    &::before {
       @include contentBefore(\f053, $float: left);
       color: $white;
-      @include font(20px,$family:"FontAwesome");
+      @include font(20px, $family: "FontAwesome");
       text-indent: 0;
     }
   }
-  .right{
+
+  .right {
     margin-right: 2%;
     @extend .left;
     @include transform(rotate(180deg));
   }
 
 }
+
+/*banner section end here*/
+/*course section start here*/
+.course{
+  padding: 45px 0 115px 0;
+  .wrapper{
+    @extend %relative;
+  }
+  @at-root{
+    .heading{
+      padding-bottom: 32px;
+      color: $header-color;
+      @include font(19px,600);
+      text-align: center;
+    }
+  }
+  .course-list{
+    @extend %flex-repeat;
+    @extend %justify-repeat;
+  }
+  .course-item{
+    padding-bottom: 10px;
+    border: 1px solid #b7b7b7;
+    @include flex-basis(31.7%);
+    figure{
+      @extend %relative;
+    }
+  }
+  .course-info{
+    padding: 0 4.6% 0 3%;
+  }
+  .text{
+    padding: 32px 0 22px 0;
+    color: #9a9a9a;
+    @include font(11px);
+  }
+  .caption{
+    padding: 14px 0;
+    @include position(absolute,$left:5%,$bottom:-21px,$right:3%);
+    background-color: $caption-color;
+    color: $white;
+    @include font(14px);
+  }
+  .caption-heading{
+    margin-right: 10%;
+    @extend %relative;
+    @include font(13px);
+    text-align: center;
+    &::before{
+      @include contentBefore('>>>');
+      float: right;
+      @include position(absolute,$top:2px,$right:10%);
+      @include font(11px);
+    }
+  }
+  .time{
+    padding: 0;
+    @extend %flex-repeat;
+    @extend .text;
+    color: #5c5c5c;
+    line-height: 17px;
+  }
+  .content {
+    display: inline-block;
+    margin-left: 3px;
+}
+.slide-btn{
+  width: 100%;
+  @include position(absolute,$bottom:-19%,$left:42.8%);
+  &::before{
+    @include contentBefore("",5.5%,2px);
+    display: block;
+    @include position(inherit,$top:50%,$left:4.5%);
+    background-color: #939393;
+  }
+}
+.left-btn{
+  text-indent: -9999px;
+  @include for-hover-only {
+    &:hover::before{
+      border-color: $caption-color;
+      color: $caption-color;
+    }
+  }
+  &::before{
+    @include contentBefore(\f104, $float: left);
+    color: #5e5e5e;
+    @include font($family:"FontAwesome");
+    text-indent: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #5e5e5e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.right-btn{
+  margin-left: 6.4%;
+  @include transform(rotate(180deg));
+  @extend .left-btn;
+}
+ 
+}
+/*course section start here*/
