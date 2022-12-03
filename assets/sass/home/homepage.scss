@@ -74,106 +74,197 @@
 
 /*banner section end here*/
 /*course section start here*/
-.course{
+.course {
   padding: 45px 0 115px 0;
-  .wrapper{
+
+  .wrapper {
     @extend %relative;
   }
-  @at-root{
-    .heading{
+
+  @at-root {
+    .heading {
       padding-bottom: 32px;
       color: $header-color;
-      @include font(19px,600);
+      @include font(19px, 600);
       text-align: center;
     }
   }
-  .course-list{
+
+  .course-list {
     @extend %flex-repeat;
     @extend %justify-repeat;
   }
-  .course-item{
+
+  .course-item {
     padding-bottom: 10px;
     border: 1px solid #b7b7b7;
     @include flex-basis(31.7%);
-    figure{
+
+    figure {
       @extend %relative;
     }
   }
-  .course-info{
+
+  .course-info {
     padding: 0 4.6% 0 3%;
   }
-  .text{
+
+  .text {
     padding: 32px 0 22px 0;
     color: #9a9a9a;
     @include font(11px);
   }
-  .caption{
+
+  .caption {
     padding: 14px 0;
-    @include position(absolute,$left:5%,$bottom:-21px,$right:3%);
+    @include position(absolute, $left: 5%, $bottom: -21px, $right: 3%);
     background-color: $caption-color;
     color: $white;
     @include font(14px);
   }
-  .caption-heading{
+
+  .caption-heading {
     margin-right: 10%;
     @extend %relative;
     @include font(13px);
     text-align: center;
-    &::before{
+
+    &::before {
       @include contentBefore('>>>');
       float: right;
-      @include position(absolute,$top:2px,$right:10%);
+      @include position(absolute, $top: 2px, $right: 10%);
       @include font(11px);
     }
   }
-  .time{
+
+  .time {
     padding: 0;
     @extend %flex-repeat;
     @extend .text;
     color: #5c5c5c;
     line-height: 17px;
   }
+
   .content {
     display: inline-block;
     margin-left: 3px;
-}
-.slide-btn{
-  width: 100%;
-  @include position(absolute,$bottom:-19%,$left:42.8%);
-  &::before{
-    @include contentBefore("",5.5%,2px);
-    display: block;
-    @include position(inherit,$top:50%,$left:4.5%);
-    background-color: #939393;
   }
-}
-.left-btn{
-  text-indent: -9999px;
-  @include for-hover-only {
-    &:hover::before{
-      border-color: $caption-color;
-      color: $caption-color;
+
+  .slide-btn {
+    width: 100%;
+    @include position(absolute, $bottom: -19%, $left: 42.8%);
+
+    &::before {
+      @include contentBefore("", 5.5%, 2px);
+      display: block;
+      @include position(inherit, $top: 50%, $left: 4.5%);
+      background-color: #939393;
     }
   }
-  &::before{
-    @include contentBefore(\f104, $float: left);
-    color: #5e5e5e;
-    @include font($family:"FontAwesome");
-    text-indent: 0;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #5e5e5e;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  .left-btn {
+    text-indent: -9999px;
+
+    @include for-hover-only {
+      &:hover::before {
+        border-color: $caption-color;
+        color: $caption-color;
+      }
+    }
+
+    &::before {
+      @include contentBefore(\f104, $float: left);
+      color: #5e5e5e;
+      @include font($family: "FontAwesome");
+      text-indent: 0;
+      width: 30px;
+      height: 30px;
+      border: 1px solid #5e5e5e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .right-btn {
+    margin-left: 6.4%;
+    @include transform(rotate(180deg));
+    @extend .left-btn;
+  }
+
+}
+
+/*course section start here*/
+/*why us section start here*/
+.why-us{
+  padding: 39px 0 21px 0;
+  background-color: $why-color;
+  color: $white;
+  .wrapper{
+    @extend %flex-repeat;
+    @extend %justify-repeat;
+  }
+  .feature-list{
+    @extend %flex-repeat;
+    @include flex-direction(column);
+    @include flex-basis(40%);
+  }
+  .feature-info{
+    @include flex-basis(57.3%);
+  }
+  .feature-item{
+    @extend %relative;
+    padding: 0 0 42px 11%;
+    @include font(14px);
+    &::before{
+      @include contentBefore(\f02d, $float: left);
+      @include position(absolute, $top: 0%, $left: 0%);
+      @include font(18px,$family: "FontAwesome");
+    }
+  }
+  .feature-item:nth-child(2)::before{
+    @include contentBefore(\f53d);
+  }
+  .feature-item:nth-child(3)::before{
+    @include contentBefore(\f51c);
+  }
+  .feature-heading{
+    padding-bottom: 35px;
+    @include font(19px,600); 
+    &::after{
+      @include contentBefore("",9%,2px);
+      display: block;
+      background-color: $white;
+    }
+  }
+  .feature-description{
+    padding-bottom: 25px;
+    @include font(12px,$family:'Raleway,sans-serif');
+    line-height: 1.5;
+  }
+  .more-btn{
+    padding: 9px 16px;
+    border: 1px solid $white;
+    color: $white;
+    @include font(14px,400);
   }
 }
-.right-btn{
-  margin-left: 6.4%;
-  @include transform(rotate(180deg));
-  @extend .left-btn;
+/*why us section end here*/
+/*gallery  section start here*/
+.gallery{
+  padding: 53px 0;
+  .wrapper{
+    width: 100%;
+  }
+
+  .gallery-list{
+    @extend %flex-repeat;
+    @include flex-wrap(wrap);
+    gap:0 98px;
+  }
+  .gallery-item{
+    @include flex(0, 0 ,17.9%);
+  }
 }
- 
-}
-/*course section start here*/
+/*gallery  section end here*/
