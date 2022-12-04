@@ -139,7 +139,7 @@ footer .icon, footer .sub-btn, footer .link, footer .email, footer .footer-call,
   transition: all 0.4s ease-in-out;
 }
 
-.query .query-wrap, .news .news-list, .testimonial .feedback-ctrl, .event .event-wrap, .why-us .wrapper, .course .course-list, .banner .slide-ctrl, header .header2 .wrapper, header .header1 .wrapper {
+footer .footer-list, .query .query-wrap, .news .news-list, .testimonial .feedback-ctrl, .event .event-wrap, .why-us .wrapper, .course .course-list, .banner .slide-ctrl, header .header2 .wrapper, header .header1 .wrapper {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -900,12 +900,12 @@ footer .add::before {
   font-family: "FontAwesome";
 }
 footer .footer-item:nth-child(2) {
-  margin-left: 3.5%;
+  margin-left: 1%;
   -ms-flex-preferred-size: 20%;
   flex-basis: 20%;
 }
 footer .footer-item:nth-child(3) {
-  margin-left: 4.3%;
+  margin-left: 3%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -915,7 +915,8 @@ footer .footer-item:nth-child(3) {
   flex-basis: 23.3%;
 }
 footer .footer-item:nth-child(4) {
-  margin-left: 2.2%;
+  -ms-flex-preferred-size: 23%;
+  flex-basis: 23%;
 }
 footer .link-list {
   -webkit-box-orient: vertical;
@@ -972,12 +973,12 @@ footer .cost {
 }
 footer .input, footer .msg {
   width: 100%;
-  padding: 8px 2% 8px 7%;
+  padding: 10px 2% 10px 7%;
   border-radius: 4px;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
   border: 1px solid #fff;
   background: none;
-  font-size: 11px;
+  font-size: 9px;
   outline: none;
 }
 footer .msg {

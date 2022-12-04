@@ -19,6 +19,7 @@ footer {
   .footer-list {
     padding-bottom: 42px;
     @extend %flex-repeat;
+    @extend %justify-repeat;
     @include font(14px, $family: "'Raleway',sans-serif");
   }
 
@@ -90,19 +91,19 @@ footer {
   }
 
   .footer-item:nth-child(2) {
-    margin-left: 3.5%;
+    margin-left: 1%;
     @include flex-basis(20%);
   }
 
   .footer-item:nth-child(3) {
-    margin-left: 4.3%;
+    margin-left: 3%;
     @extend %flex-repeat;
     @include flex-direction(column);
     @include flex-basis(23.3%);
   }
 
   .footer-item:nth-child(4) {
-    margin-left: 2.2%;
+    @include flex-basis(23%);
   }
 
   .link-list {
@@ -160,12 +161,12 @@ footer {
 
   .input {
     width: 100%;
-    padding: 8px 2% 8px 7%;
+    padding: 10px 2% 10px 7%;
     border-radius: 4px;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
     border: 1px solid $white;
     background: none;
-    @include font(11px);
+    @include font(9px);
     outline: none;
   }
 
