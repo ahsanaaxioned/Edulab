@@ -125,17 +125,17 @@ li {
 }
 
 /* header start here*/
-.query .query-wrap, .news .news-list, .left-ctrl::before, .right-ctrl::before, .testimonial .feedback-ctrl, .testimonial .star-list, .testimonial .fig-wrap, .testimonial .feedbak-list, .event .event-wrap, .gallery .gallery-list, .why-us .feature-list, .why-us .wrapper, .course .time, .course .course-list, .banner .slide-ctrl, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .social-list, header .email, header .call, header .link, header .header1 .wrapper {
+footer .link-list, footer .sub-item, footer .footer-list, .query .query-wrap, .news .news-list, .left-ctrl::before, .right-ctrl::before, .testimonial .feedback-ctrl, .testimonial .star-list, .testimonial .fig-wrap, .testimonial .feedbak-list, .event .event-wrap, .gallery .gallery-list, .why-us .feature-list, .why-us .wrapper, .course .time, .course .course-list, .banner .slide-ctrl, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .social-list, header .email, header footer .footer-call, footer header .footer-call, header .call, header .link, header .header1 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.query .contact, .news .news-item, .news .wrapper, .testimonial .testimonial-heading, .testimonial .feeback-item, .testimonial .wrapper, .event .schedule, .event .event-info, .event .second, .why-us .feature-item, .course .caption-heading, .course .course-item figure, .course .wrapper, .banner .wrapper, header .header2 .down {
+footer .link, footer .add, footer .email, footer .footer-call, footer header .call, header footer .call, footer .footer-heading, .query .contact, .news .news-item, .news .wrapper, .testimonial .testimonial-heading, .testimonial .feeback-item, .testimonial .wrapper, .event .schedule, .event .event-info, .event .second, .why-us .feature-item, .course .caption-heading, .course .course-item figure, .course .wrapper, .banner .wrapper, header .header2 .down {
   position: relative;
 }
 
-.query .contact, .left-ctrl, .right-ctrl, .why-us .more-btn, .banner .left, .banner .right, header .header2 .nav-link, header .header2 .bar, header .login, header .icon, header .email, header .call {
+footer .email, footer .footer-call, footer header .call, header footer .call, .query .contact, .left-ctrl, .right-ctrl, .why-us .more-btn, .banner .left, .banner .right, header .header2 .nav-link, header .header2 .bar, header .login, header .icon, header .email, header footer .footer-call, footer header .footer-call, header .call {
   transition: all 0.4s ease-in-out;
 }
 
@@ -145,7 +145,7 @@ li {
   justify-content: space-between;
 }
 
-.left-ctrl::before, .right-ctrl::before, .testimonial .fig-wrap, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .email, header .call, header .header1 .wrapper {
+.left-ctrl::before, .right-ctrl::before, .testimonial .fig-wrap, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .email, header footer .footer-call, footer header .footer-call, header .call, header .header1 .wrapper {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -160,17 +160,17 @@ header .link {
   -ms-flex-preferred-size: 62.8%;
   flex-basis: 62.8%;
 }
-header .email, header .call {
+header .email, header footer .footer-call, footer header .footer-call, header .call {
   color: #fff;
   font-size: 10px;
   font-weight: 400;
 }
 @media (min-width: 995px) {
-  header .email:hover, header .call:hover {
+  header .email:hover, header footer .footer-call:hover, footer header .footer-call:hover, header .call:hover {
     color: #019450;
   }
 }
-header .email::before, header .call::before {
+header .email::before, header footer .footer-call::before, footer header .footer-call::before, header .call::before {
   margin-right: 10px;
   content: "\f0e0";
   float: left;
@@ -816,5 +816,116 @@ header .header2 .down::before {
 }
 
 /*query section end here*/
+/*footer css start her*/
+footer {
+  background-color: #000;
+  color: #fff;
+}
+footer .footer-heading {
+  padding-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "'Raleway',sans-serif";
+}
+footer .footer-heading::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  position: absolute;
+  bottom: 42%;
+  left: 0;
+  background-color: #fff;
+}
+footer .footer-list {
+  font-size: 14px;
+  font-family: "'Raleway',sans-serif";
+}
+footer .footer-item:nth-child(1) {
+  -ms-flex-preferred-size: 23.3%;
+  flex-basis: 23.3%;
+}
+footer .sub-item {
+  padding: 13px 0 10px;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 11px;
+  font-family: "'Raleway',sans-serif";
+}
+footer .sub-item:nth-child(1) {
+  padding: 0;
+}
+footer .footer-description {
+  padding-bottom: 20px;
+  line-height: 1.4;
+}
+footer .email, footer .footer-call, footer header .call, header footer .call {
+  padding-left: 11%;
+  color: #fff;
+}
+@media (min-width: 995px) {
+  footer .email:hover, footer .footer-call:hover, footer header .call:hover, header footer .call:hover {
+    color: #019450;
+  }
+  footer .email:hover::before, footer .footer-call:hover::before, footer header .call:hover::before, header footer .call:hover::before {
+    color: #019450;
+  }
+}
+footer .email::before, footer .footer-call::before, footer header .call::before, header footer .call::before {
+  content: "\f0e0";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 10px;
+  font-family: "FontAwesome";
+}
+footer .footer-call::before {
+  content: "\f879";
+}
+footer .add {
+  width: 100%;
+  padding-left: 11%;
+}
+footer .add::before {
+  padding-left: 4%;
+  content: "\f3c5";
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -6px;
+  color: #fff;
+  font-size: 10px;
+  font-family: "FontAwesome";
+}
+footer .footer-item:nth-child(2) {
+  margin-left: 3.5%;
+  -ms-flex-preferred-size: 15%;
+  flex-basis: 15%;
+}
+footer .link-list {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex-direction: column;
+}
+footer .link {
+  padding: 0 0 11px 1%;
+  color: #fff;
+  font-size: 11px;
+  font-family: "'Raleway',sans-serif";
+}
+footer .link::before {
+  content: "\f105";
+  float: left;
+  position: absolute;
+  top: 1px;
+  left: -8px;
+  color: #fff;
+  font-size: 10px;
+  font-family: "FontAwesome";
+}
+
+/*footer css end her*/
 
 /*# sourceMappingURL=style.css.map */

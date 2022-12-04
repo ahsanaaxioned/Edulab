@@ -1,0 +1,113 @@
+/*footer css start her*/
+footer {
+  background-color: $black;
+  color: $white;
+
+  .footer-heading {
+    padding-bottom: 24px;
+    @extend %relative;
+    @include font(14px, 600, $family: "'Raleway',sans-serif");
+
+    &::before {
+      @include contentBefore("", 25px, 2px);
+      @include position(absolute, $bottom: 42%, $left: 0);
+      background-color: $white;
+    }
+  }
+
+  .footer-list {
+    @extend %flex-repeat;
+    @include font(14px, $family: "'Raleway',sans-serif");
+  }
+
+  .footer-item:nth-child(1) {
+    @include flex-basis(23.3%);
+  }
+
+  .sub-item {
+    padding: 13px 0 10px;
+    border-bottom: 1px solid $white;
+    @extend %flex-repeat;
+    color: $white;
+    @include font(11px, $family: "'Raleway',sans-serif");
+  }
+
+  .sub-item:nth-child(1) {
+    padding: 0;
+  }
+
+  .footer-description {
+    padding-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .email {
+    padding-left: 11%;
+    @extend %relative;
+    color: $white;
+    @extend %transition-repeat;
+
+    @include for-hover-only {
+      &:hover {
+        color: $caption-color;
+      }
+
+      &:hover::before {
+        color: $caption-color;
+      }
+    }
+
+    &::before {
+      @include contentBefore(\f0e0);
+      @include position(absolute, $top: 0, $left: 0);
+      color: $white;
+      @include font(10px, $family: "FontAwesome");
+    }
+  }
+
+  .footer-call {
+    @extend .email;
+
+    &::before {
+      @include contentBefore(\f879);
+    }
+  }
+
+  .add {
+    width: 100%;
+    padding-left: 11%;
+    @extend %relative;
+
+    &::before {
+      padding-left: 4%;
+      @include contentBefore(\f3c5, $float: left);
+      @include position(absolute, $top: 0, $left: -6px);
+      color: $white;
+      @include font(10px, $family: "FontAwesome");
+    }
+  }
+
+  .footer-item:nth-child(2){
+    margin-left:3.5%;
+    @include flex-basis(15%);
+  }
+  .link-list{
+    @extend %flex-repeat;
+    @include flex-direction(column);
+  }
+  
+  .link{
+    padding: 0 0 11px 1%;
+    @extend %relative;
+    color: $white;
+    @include font(11px, $family: "'Raleway',sans-serif");
+    &::before{
+      @include contentBefore(\f105, $float: left);
+      @include position(absolute, $top: 1px, $left: -8px);
+      color: $white;
+      @include font(10px, $family: "FontAwesome");
+    }
+  }
+}
+
+/*footer css end her*/
