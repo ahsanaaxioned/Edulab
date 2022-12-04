@@ -97,6 +97,7 @@ sub {
 body {
   box-sizing: border-box;
   font-family: Georgia, "Times New Roman", Times, serif;
+  overflow: hidden;
 }
 
 a {
@@ -124,27 +125,27 @@ li {
 }
 
 /* header start here*/
-.event .event-wrap, .gallery .gallery-list, .why-us .feature-list, .why-us .wrapper, .course .time, .course .course-list, .banner .slide-ctrl, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .social-list, header .email, header .call, header .link, header .header1 .wrapper {
+.left-ctrl::before, .right-ctrl::before, .testimonial .feedback-ctrl, .testimonial .star-list, .testimonial .fig-wrap, .testimonial .feedbak-list, .event .event-wrap, .gallery .gallery-list, .why-us .feature-list, .why-us .wrapper, .course .time, .course .course-list, .banner .slide-ctrl, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .social-list, header .email, header .call, header .link, header .header1 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.event .schedule, .event .event-info, .event .second, .why-us .feature-item, .course .caption-heading, .course .course-item figure, .course .wrapper, .banner .wrapper, header .header2 .down {
+.testimonial .testimonial-heading, .testimonial .feeback-item, .testimonial .wrapper, .event .schedule, .event .event-info, .event .second, .why-us .feature-item, .course .caption-heading, .course .course-item figure, .course .wrapper, .banner .wrapper, header .header2 .down {
   position: relative;
 }
 
-.why-us .more-btn, .banner .left, .banner .right, header .header2 .nav-link, header .header2 .bar, header .login, header .icon, header .email, header .call {
+.left-ctrl, .right-ctrl, .why-us .more-btn, .banner .left, .banner .right, header .header2 .nav-link, header .header2 .bar, header .login, header .icon, header .email, header .call {
   transition: all 0.4s ease-in-out;
 }
 
-.event .event-wrap, .why-us .wrapper, .course .course-list, .banner .slide-ctrl, header .header2 .wrapper, header .header1 .wrapper {
+.testimonial .feedback-ctrl, .event .event-wrap, .why-us .wrapper, .course .course-list, .banner .slide-ctrl, header .header2 .wrapper, header .header1 .wrapper {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-header .header2 .nav-list, header .header2 .wrapper, header .icon, header .email, header .call, header .header1 .wrapper {
+.left-ctrl::before, .right-ctrl::before, .testimonial .fig-wrap, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .email, header .call, header .header1 .wrapper {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -605,5 +606,134 @@ header .header2 .down::before {
 }
 
 /*event  section end here*/
+/*testimonial  section start here*/
+.testimonial {
+  padding: 49px 0;
+  background-color: #323E54;
+}
+.testimonial .feeback-item {
+  padding: 33px 0 41px 0;
+  margin: 0 13% 0 13%;
+  display: none;
+  background-color: #000;
+}
+.testimonial .feeback-item::before {
+  content: "";
+  width: 97%;
+  height: 265px;
+  border: 1px solid #fff;
+  display: block;
+  background-color: transparent;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.testimonial .feeback-item:nth-child(1) {
+  display: block;
+}
+.testimonial .testimonial-span {
+  padding-bottom: 15px;
+  display: block;
+  color: #019450;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.testimonial .testimonial-heading {
+  padding-bottom: 45px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+.testimonial .testimonial-heading::before {
+  content: "";
+  width: 8%;
+  height: 4px;
+  display: inline-block;
+  position: absolute;
+  bottom: 54%;
+  left: 46.3%;
+  background-color: #019450;
+}
+.testimonial .fig-wrap {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex-direction: column;
+}
+.testimonial .title {
+  padding: 12px 0;
+  color: #fff;
+  font-size: 12px;
+}
+.testimonial .star {
+  text-indent: -9999px;
+}
+.testimonial .star::before {
+  content: "\f005";
+  float: left;
+  color: #797878;
+  font-size: 12px;
+  font-family: "FontAwesome";
+  text-indent: 0;
+}
+.testimonial .star:nth-child(1)::before {
+  color: #E19215;
+}
+.testimonial .star:nth-child(2)::before {
+  color: #E19215;
+}
+.testimonial .wrap-feedback {
+  padding: 0 10% 0 8%;
+}
+.testimonial .comments {
+  padding-top: 19px;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.4;
+}
+.testimonial .feedback-ctrl {
+  width: 88.5%;
+  position: absolute;
+  top: 60%;
+  left: 5.8%;
+}
+
+.left-ctrl, .right-ctrl {
+  text-indent: -9999px;
+}
+@media (min-width: 995px) {
+  .left-ctrl:hover::before, .right-ctrl:hover::before {
+    border: 1px solid #019450;
+    color: #019450;
+    background-color: #fff;
+  }
+}
+.left-ctrl::before, .right-ctrl::before {
+  content: "\f053";
+  float: left;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  color: #fff;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "FontAwesome";
+  text-indent: 0;
+}
+
+.right-ctrl {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/*testimonial  section end here*/
 
 /*# sourceMappingURL=style.css.map */

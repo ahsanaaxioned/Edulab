@@ -197,58 +197,70 @@
 
 /*course section start here*/
 /*why us section start here*/
-.why-us{
+.why-us {
   padding: 39px 0 21px 0;
   background-color: $why-color;
   color: $white;
-  .wrapper{
+
+  .wrapper {
     @extend %flex-repeat;
     @extend %justify-repeat;
   }
-  .feature-list{
+
+  .feature-list {
     @extend %flex-repeat;
     @include flex-direction(column);
     @include flex-basis(40%);
   }
-  .feature-info{
+
+  .feature-info {
     @include flex-basis(57.3%);
   }
-  .feature-item{
+
+  .feature-item {
     @extend %relative;
     padding: 0 0 42px 11%;
     @include font(14px);
-    &::before{
+
+    &::before {
       @include contentBefore(\f02d, $float: left);
       @include position(absolute, $top: 0%, $left: 0%);
-      @include font(18px,$family: "FontAwesome");
+      @include font(18px, $family: "FontAwesome");
     }
   }
-  .feature-item:nth-child(2)::before{
+
+  .feature-item:nth-child(2)::before {
     @include contentBefore(\f53d);
   }
-  .feature-item:nth-child(3)::before{
+
+  .feature-item:nth-child(3)::before {
     @include contentBefore(\f51c);
   }
-  .feature-heading{
+
+  .feature-heading {
     padding-bottom: 35px;
-    @include font(19px,600); 
-    &::after{
-      @include contentBefore("",9%,2px);
+    @include font(19px, 600);
+
+    &::after {
+      @include contentBefore("", 9%, 2px);
       display: block;
       background-color: $white;
     }
   }
-  .feature-description{
+
+  .feature-description {
     padding-bottom: 25px;
-    @include font(12px,$family:'Raleway,sans-serif');
+    @include font(12px, $family: 'Raleway,sans-serif');
     line-height: 1.5;
   }
-  .more-btn{
+
+  .more-btn {
     padding: 9px 16px;
     border: 1px solid $white;
     color: $white;
     @extend %transition-repeat;
-    @include font(14px,400);
+    @include font(14px, 400);
+
     @include for-hover-only {
       &:hover {
         border-color: $caption-color;
@@ -258,73 +270,215 @@
     }
   }
 }
+
 /*why us section end here*/
 /*gallery  section start here*/
-.gallery{
+.gallery {
   padding: 53px 0;
-  .wrapper{
+
+  .wrapper {
     width: 100%;
   }
 
-  .gallery-list{
+  .gallery-list {
     @extend %flex-repeat;
     @include flex-wrap(wrap);
-    gap:0 98px;
+    gap: 0 98px;
   }
-  .gallery-item{
-    @include flex(0, 0 ,17.9%);
+
+  .gallery-item {
+    @include flex(0, 0, 17.9%);
   }
 }
+
 /*gallery  section end here*/
 /*event  section start here*/
-.event{
+.event {
   padding-bottom: 46px;
-  .event-wrap{
+
+  .event-wrap {
     @extend %flex-repeat;
     @extend %justify-repeat;
   }
-  .event-info{
+
+  .event-info {
     @include flex-basis(36%);
     @extend %relative;
   }
-  .second{
+
+  .second {
     @extend .event-info;
     margin-right: 12.7%;
   }
-  .event-content{
+
+  .event-content {
     width: 63.8%;
     padding: 0 3% 11px 2%;
-    @include position(absolute,2,$top:12px,$left:72%);
-      background-color: $white;
-      @include boxShadow(0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%));
+    @include position(absolute, 2, $top: 12px, $left: 72%);
+    background-color: $white;
+    @include boxShadow(0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%));
   }
-  .event-heading{
+
+  .event-heading {
     padding: 10px 0 12px;
     color: $event;
-    @include font(13px,600);
+    @include font(13px, 600);
     line-height: 1.5;
   }
-  .event-description{
+
+  .event-description {
     padding-bottom: 11px;
     color: #585858;
-    @include font(10px,$family:'Raleway,sans-serif');
+    @include font(10px, $family: 'Raleway,sans-serif');
     line-height: 1.4;
   }
-  .schedule{
+
+  .schedule {
     padding-left: 11px;
     display: block;
     @extend %relative;
     color: $black;
     @include font(10px);
     line-height: 1.4;
-    &::before{
+
+    &::before {
       @include contentBefore(\f017, $float: left);
-      @include position(absolute,$top:1px,$left:0); 
-      @include font(9px,$family: "FontAwesome");
+      @include position(absolute, $top: 1px, $left: 0);
+      @include font(9px, $family: "FontAwesome");
     }
   }
-  .location::before{
+
+  .location::before {
     @include contentBefore(\f3c5);
   }
 }
+
 /*event  section end here*/
+/*testimonial  section start here*/
+.testimonial{
+  padding: 49px 0;
+  background-color: #323E54;
+  .wrapper{
+    @extend %relative;
+  }
+  .feedbak-list{
+    @extend %flex-repeat;
+    
+  }
+  .feeback-item{
+    padding: 33px 0 41px 0;
+    margin: 0 13% 0 13%;
+    display: none;
+    @extend %relative;
+    background-color: $black;
+       &::before{
+      @include contentBefore("",97%,265px);
+      border: 1px solid #fff;
+      display: block;
+      background-color: transparent;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+   
+  }
+  .feeback-item:nth-child(1){
+    display: block;
+  }
+  .testimonial-span{
+    padding-bottom: 15px;
+    display: block;
+    color: $caption-color;
+    @include font(20px,600); 
+    text-align: center;
+  }
+  .testimonial-heading{
+    padding-bottom: 45px;
+    @extend %relative;
+    color: $white;
+    @include font(22px,600); 
+    text-align: center;
+    &::before{
+      @include contentBefore("",8%,4px);
+      display: inline-block;
+      @include position(absolute,$bottom:54%,$left:46.3%);
+      background-color: $caption-color;
+    }
+  }
+  .fig-wrap{
+    @extend %flex-repeat;
+    @extend %align-repeat;
+    @include flex-direction(column);
+  }
+  .title{
+    padding: 12px 0;
+    color: $white;
+    @include font(12px);
+  }
+  .star-list{
+    @extend %flex-repeat;
+  }
+  .star{
+    text-indent: -9999px;
+    &::before{
+      @include contentBefore(\f005, $float: left);
+      color: #797878;
+      @include font(12px, $family: "FontAwesome");
+      text-indent: 0;
+    }
+  }
+  .star:nth-child(1)::before{
+    color: #E19215;
+  }
+  .star:nth-child(2)::before{
+    color: #E19215;
+  }
+  .wrap-feedback {
+    padding: 0 10% 0 8%;
+}
+
+  .comments{
+    padding-top: 19px;
+    color: $white;
+    @include font(11px);
+    text-align: center;
+    line-height: 1.4;
+  }
+  .feedback-ctrl {
+    width: 88.5%;
+    @extend %flex-repeat;
+    @extend %justify-repeat;
+    @include position(absolute,$top:60%,$left:5.8%);
+    }
+}
+
+  .left-ctrl{
+    text-indent: -9999px;
+    @extend %transition-repeat;
+    @include for-hover-only{
+      &:hover::before{
+        border: 1px solid $caption-color;
+        color: $caption-color;
+        background-color: $white;
+      }
+    }
+    &::before{
+      @include contentBefore(\f053, $float: left);
+      width: 30px;
+      height: 30px;
+      border: 1px solid $white;
+      border-radius: 3px;
+      color: $white;
+      @extend %flex-repeat;
+      @extend %align-repeat;
+      @include justify-content(center); 
+      @include font(16px,$family:"FontAwesome");
+      text-indent: 0;
+    }
+  }
+  .right-ctrl{
+    @extend .left-ctrl;
+    @include transform(rotate(180deg));
+  }
+
+/*testimonial  section end here*/
