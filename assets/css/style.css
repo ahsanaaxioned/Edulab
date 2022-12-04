@@ -125,17 +125,17 @@ li {
 }
 
 /* header start here*/
-footer .link-list, footer .sub-item, footer .footer-list, .query .query-wrap, .news .news-list, .left-ctrl::before, .right-ctrl::before, .testimonial .feedback-ctrl, .testimonial .star-list, .testimonial .fig-wrap, .testimonial .feedbak-list, .event .event-wrap, .gallery .gallery-list, .why-us .feature-list, .why-us .wrapper, .course .time, .course .course-list, .banner .slide-ctrl, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .social-list, header .email, header footer .footer-call, footer header .footer-call, header .call, header .link, header .header1 .wrapper {
+footer .icon, footer .social-list, footer .link-list, footer .footer-item:nth-child(3), footer .sub-item, footer .footer-list, .query .query-wrap, .news .news-list, .left-ctrl::before, .right-ctrl::before, .testimonial .feedback-ctrl, .testimonial .star-list, .testimonial .fig-wrap, .testimonial .feedbak-list, .event .event-wrap, .gallery .gallery-list, .why-us .feature-list, .why-us .wrapper, .course .time, .course .course-list, .banner .slide-ctrl, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .social-list, header .email, header footer .footer-call, footer header .footer-call, header .call, header .link, header .header1 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-footer .link, footer .add, footer .email, footer .footer-call, footer header .call, header footer .call, footer .footer-heading, .query .contact, .news .news-item, .news .wrapper, .testimonial .testimonial-heading, .testimonial .feeback-item, .testimonial .wrapper, .event .schedule, .event .event-info, .event .second, .why-us .feature-item, .course .caption-heading, .course .course-item figure, .course .wrapper, .banner .wrapper, header .header2 .down {
+footer .course-name, footer .link, footer .add, footer .email, footer .footer-call, footer header .call, header footer .call, footer .footer-heading, .query .contact, .news .news-item, .news .wrapper, .testimonial .testimonial-heading, .testimonial .feeback-item, .testimonial .wrapper, .event .schedule, .event .event-info, .event .second, .why-us .feature-item, .course .caption-heading, .course .course-item figure, .course .wrapper, .banner .wrapper, header .header2 .down {
   position: relative;
 }
 
-footer .email, footer .footer-call, footer header .call, header footer .call, .query .contact, .left-ctrl, .right-ctrl, .why-us .more-btn, .banner .left, .banner .right, header .header2 .nav-link, header .header2 .bar, header .login, header .icon, header .email, header footer .footer-call, footer header .footer-call, header .call {
+footer .icon, footer .sub-btn, footer .link, footer .email, footer .footer-call, footer header .call, header footer .call, .query .contact, .left-ctrl, .right-ctrl, .why-us .more-btn, .banner .left, .banner .right, header .header2 .nav-link, header .header2 .bar, header .login, header .icon, header .email, header footer .footer-call, footer header .footer-call, header .call {
   transition: all 0.4s ease-in-out;
 }
 
@@ -145,7 +145,7 @@ footer .email, footer .footer-call, footer header .call, header footer .call, .q
   justify-content: space-between;
 }
 
-.left-ctrl::before, .right-ctrl::before, .testimonial .fig-wrap, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .email, header footer .footer-call, footer header .footer-call, header .call, header .header1 .wrapper {
+footer .icon, .left-ctrl::before, .right-ctrl::before, .testimonial .fig-wrap, header .header2 .nav-list, header .header2 .wrapper, header .icon, header .email, header footer .footer-call, footer header .footer-call, header .call, header .header1 .wrapper {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -818,6 +818,7 @@ header .header2 .down::before {
 /*query section end here*/
 /*footer css start her*/
 footer {
+  padding: 30px 0 16px 0;
   background-color: #000;
   color: #fff;
 }
@@ -837,6 +838,7 @@ footer .footer-heading::before {
   background-color: #fff;
 }
 footer .footer-list {
+  padding-bottom: 42px;
   font-size: 14px;
   font-family: "'Raleway',sans-serif";
 }
@@ -899,8 +901,21 @@ footer .add::before {
 }
 footer .footer-item:nth-child(2) {
   margin-left: 3.5%;
-  -ms-flex-preferred-size: 15%;
-  flex-basis: 15%;
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+}
+footer .footer-item:nth-child(3) {
+  margin-left: 4.3%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex-direction: column;
+  -ms-flex-preferred-size: 23.3%;
+  flex-basis: 23.3%;
+}
+footer .footer-item:nth-child(4) {
+  margin-left: 2.2%;
 }
 footer .link-list {
   -webkit-box-orient: vertical;
@@ -915,6 +930,14 @@ footer .link {
   font-size: 11px;
   font-family: "'Raleway',sans-serif";
 }
+@media (min-width: 995px) {
+  footer .link:hover {
+    color: #019450;
+  }
+  footer .link:hover::before {
+    color: #019450;
+  }
+}
 footer .link::before {
   content: "\f105";
   float: left;
@@ -924,6 +947,98 @@ footer .link::before {
   color: #fff;
   font-size: 10px;
   font-family: "FontAwesome";
+}
+footer .course-name {
+  padding: 0 0 19px 31%;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 5px;
+}
+footer .course-name::before {
+  content: "";
+  width: 43px;
+  height: 43px;
+  float: left;
+  border-radius: 3px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background-color: #ef0000;
+}
+footer .courses-title {
+  font-size: 13px;
+}
+footer .cost {
+  font-size: 12px;
+}
+footer .input, footer .msg {
+  width: 100%;
+  padding: 8px 2% 8px 7%;
+  border-radius: 4px;
+  margin-bottom: 7px;
+  border: 1px solid #fff;
+  background: none;
+  font-size: 11px;
+  outline: none;
+}
+footer .msg {
+  resize: none;
+}
+footer .sub-btn {
+  width: 100%;
+  padding: 9px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+@media (min-width: 995px) {
+  footer .sub-btn:hover {
+    border: 1px solid #fff;
+    background-color: #019450;
+    color: #fff;
+  }
+}
+footer .social-list {
+  padding-bottom: 22px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 16px;
+}
+footer .icon {
+  color: #fff;
+  text-indent: -9999px;
+}
+footer .icon::before {
+  content: "\f082";
+  float: left;
+  font-size: 13px;
+  font-family: "FontAwesome";
+  text-indent: 0;
+}
+@media (min-width: 995px) {
+  footer .icon:hover {
+    color: #019450;
+  }
+}
+footer .twitter::before {
+  content: "\f099";
+}
+footer .skype::before {
+  content: "\f17e";
+}
+footer .youtube::before {
+  content: "\f167";
+}
+footer .instagram::before {
+  content: "\f16d";
+}
+footer .copy {
+  font-size: 14px;
+  font-family: "sans-serif";
+  text-align: center;
 }
 
 /*footer css end her*/

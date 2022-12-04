@@ -1,5 +1,6 @@
 /*footer css start her*/
 footer {
+  padding: 30px 0 16px 0;
   background-color: $black;
   color: $white;
 
@@ -16,6 +17,7 @@ footer {
   }
 
   .footer-list {
+    padding-bottom: 42px;
     @extend %flex-repeat;
     @include font(14px, $family: "'Raleway',sans-serif");
   }
@@ -87,26 +89,148 @@ footer {
     }
   }
 
-  .footer-item:nth-child(2){
-    margin-left:3.5%;
-    @include flex-basis(15%);
+  .footer-item:nth-child(2) {
+    margin-left: 3.5%;
+    @include flex-basis(20%);
   }
-  .link-list{
+
+  .footer-item:nth-child(3) {
+    margin-left: 4.3%;
+    @extend %flex-repeat;
+    @include flex-direction(column);
+    @include flex-basis(23.3%);
+  }
+
+  .footer-item:nth-child(4) {
+    margin-left: 2.2%;
+  }
+
+  .link-list {
     @extend %flex-repeat;
     @include flex-direction(column);
   }
-  
-  .link{
+
+  .link {
     padding: 0 0 11px 1%;
     @extend %relative;
     color: $white;
     @include font(11px, $family: "'Raleway',sans-serif");
-    &::before{
+    @extend %transition-repeat;
+
+    @include for-hover-only {
+      &:hover {
+        color: $caption-color;
+      }
+
+      &:hover::before {
+        color: $caption-color;
+      }
+    }
+
+    &::before {
       @include contentBefore(\f105, $float: left);
       @include position(absolute, $top: 1px, $left: -8px);
       color: $white;
       @include font(10px, $family: "FontAwesome");
+
     }
+  }
+
+  .course-name {
+    padding: 0 0 19px 31%;
+    border-bottom: 1px solid $white;
+    margin-bottom: 5px;
+    @extend %relative;
+
+    &::before {
+      @include contentBefore("", 43px, 43px, $float: left);
+      border-radius: 3px;
+      @include position(absolute, $top: 2px, $left: 0);
+      background-color: #ef0000;
+    }
+  }
+
+  .courses-title {
+    @include font(13px);
+  }
+
+  .cost {
+    @include font(12px);
+  }
+
+  .input {
+    width: 100%;
+    padding: 8px 2% 8px 7%;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    border: 1px solid $white;
+    background: none;
+    @include font(11px);
+    outline: none;
+  }
+
+  .msg {
+    @extend .input;
+    resize: none;
+  }
+
+  .sub-btn {
+    width: 100%;
+    padding: 9px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: $white;
+    @include font(10px, 700);
+    text-align: center;
+    @extend %transition-repeat;
+
+    @include for-hover-only {
+      &:hover {
+        border: 1px solid $white;
+        background-color: $caption-color;
+        color: $white;
+      }
+    }
+  }
+
+  .social-list{
+    padding-bottom: 22px;
+    @extend %flex-repeat;
+    @include justify-content(center);
+    gap: 16px
+  }
+  .icon{
+    @extend %flex-repeat;
+    @extend %align-repeat;
+    color: $white;
+    text-indent: -9999px;
+    @extend %transition-repeat;
+    &::before{
+      @include contentBefore(\f082, $float: left);
+      @include font(13px, $family: "FontAwesome");
+      text-indent: 0;
+    }
+    @include for-hover-only {
+      &:hover {
+        color: $caption-color;
+      }
+    }
+  }
+  .twitter::before{
+    @include contentBefore(\f099);
+  }
+  .skype::before{
+    @include contentBefore(\f17e);
+  }
+  .youtube::before{
+    @include contentBefore(\f167);
+  }
+  .instagram::before{
+    @include contentBefore(\f16d);
+  }
+  .copy{
+    @include font(14px,$family:"sans-serif");
+    text-align: center;
   }
 }
 

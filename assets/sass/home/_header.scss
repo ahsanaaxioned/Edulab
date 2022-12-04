@@ -2,7 +2,8 @@
 %flex-repeat {
   @include displayFlex();
 }
-%relative{
+
+%relative {
   @include position(relative);
 }
 
@@ -41,8 +42,9 @@ header {
     color: $white;
     @include font(10px, 400);
     @extend %transition-repeat;
-    @include for-hover-only{
-      &:hover{
+
+    @include for-hover-only {
+      &:hover {
         color: $caption-color;
       }
     }
@@ -85,8 +87,9 @@ header {
     color: $white;
     text-indent: -9999px;
     @extend %transition-repeat;
-    @include for-hover-only{
-      &:hover{
+
+    @include for-hover-only {
+      &:hover {
         color: $caption-color;
       }
     }
@@ -109,19 +112,21 @@ header {
     color: $white;
     @include font(10px);
     @extend %transition-repeat;
-    @include for-hover-only{
-      &:hover{
+
+    @include for-hover-only {
+      &:hover {
         color: $caption-color;
       }
     }
   }
-  
-  .header2{
-    .wrapper{
+
+  .header2 {
+    .wrapper {
       @extend %flex-repeat;
       @extend %align-repeat;
       @extend %justify-repeat;
     }
+
     .hamburger {
       display: none;
       cursor: pointer;
@@ -136,41 +141,50 @@ header {
       text-indent: -9999px;
       @extend %transition-repeat;
     }
-    .navbar{
+
+    .navbar {
       @include flex-basis(49.5%);
     }
-    .nav-list{
+
+    .nav-list {
       @extend %flex-repeat;
       @extend %align-repeat;
       gap: 12px;
     }
-    .nav-item:nth-child(2){
+
+    .nav-item:nth-child(2) {
       padding-right: 16px;
     }
-    .nav-item:nth-child(3){
+
+    .nav-item:nth-child(3) {
       padding-right: 16px;
     }
-    .nav-link{
+
+    .nav-link {
       padding: 5px;
       color: $nav-anc;
       @include font(14px);
       @extend %transition-repeat;
-      @include for-hover-only{
-        &:hover{
+
+      @include for-hover-only {
+        &:hover {
           color: $caption-color;
         }
       }
     }
-    .down{
+
+    .down {
       @extend %relative;
-      &::before{
+
+      &::before {
         @include contentBefore(\f078, $float: right);
-        @include position(absolute,$top:36%,$right:-23%);
+        @include position(absolute, $top: 36%, $right: -23%);
         color: #363636;
         @include font(10px, $family: "FontAwesome");
       }
-      @include for-hover-only{
-        &:hover::before{
+
+      @include for-hover-only {
+        &:hover::before {
           color: $caption-color;
         }
       }
