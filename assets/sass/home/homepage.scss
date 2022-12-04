@@ -150,47 +150,49 @@
     margin-left: 3px;
   }
 
-  .slide-btn {
-    width: 100%;
-    @include position(absolute, $bottom: -19%, $left: 42.8%);
+  @at-root {
+    .slide-btn {
+      width: 100%;
+      @include position(absolute, $bottom: -19%, $left: 42.8%);
 
-    &::before {
-      @include contentBefore("", 5.5%, 2px);
-      display: block;
-      @include position(inherit, $top: 50%, $left: 4.5%);
-      background-color: #939393;
-    }
-  }
-
-  .left-btn {
-    text-indent: -9999px;
-
-    @include for-hover-only {
-      &:hover::before {
-        border-color: $caption-color;
-        color: $caption-color;
+      &::before {
+        @include contentBefore("", 5.5%, 2px);
+        display: block;
+        @include position(inherit, $top: 50%, $left: 4.5%);
+        background-color: #939393;
       }
     }
 
-    &::before {
-      @include contentBefore(\f104, $float: left);
-      color: #5e5e5e;
-      @include font($family: "FontAwesome");
-      text-indent: 0;
-      width: 30px;
-      height: 30px;
-      border: 1px solid #5e5e5e;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
+    .left-btn {
+      text-indent: -9999px;
 
-  .right-btn {
-    margin-left: 6.4%;
-    @include transform(rotate(180deg));
-    @extend .left-btn;
+      @include for-hover-only {
+        &:hover::before {
+          border-color: $caption-color;
+          color: $caption-color;
+        }
+      }
+
+      &::before {
+        @include contentBefore(\f104, $float: left);
+        color: #5e5e5e;
+        @include font($family: "FontAwesome");
+        text-indent: 0;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #5e5e5e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .right-btn {
+      margin-left: 6.4%;
+      @include transform(rotate(180deg));
+      @extend .left-btn;
+    }
   }
 
 }
@@ -319,11 +321,13 @@
     @include boxShadow(0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%));
   }
 
-  .event-heading {
-    padding: 10px 0 12px;
-    color: $event;
-    @include font(13px, 600);
-    line-height: 1.5;
+  @at-root {
+    .event-heading {
+      padding: 10px 0 12px;
+      color: $event;
+      @include font(13px, 600);
+      line-height: 1.5;
+    }
   }
 
   .event-description {
@@ -355,24 +359,28 @@
 
 /*event  section end here*/
 /*testimonial  section start here*/
-.testimonial{
+.testimonial {
   padding: 49px 0;
   background-color: #323E54;
-  .wrapper{
+
+  .wrapper {
     @extend %relative;
   }
-  .feedbak-list{
+
+  .feedbak-list {
     @extend %flex-repeat;
-    
+
   }
-  .feeback-item{
+
+  .feeback-item {
     padding: 33px 0 41px 0;
     margin: 0 13% 0 13%;
     display: none;
     @extend %relative;
     background-color: $black;
-       &::before{
-      @include contentBefore("",97%,265px);
+
+    &::before {
+      @include contentBefore("", 97%, 265px);
       border: 1px solid #fff;
       display: block;
       background-color: transparent;
@@ -380,105 +388,226 @@
       top: 8px;
       left: 8px;
     }
-   
+
   }
-  .feeback-item:nth-child(1){
+
+  .feeback-item:nth-child(1) {
     display: block;
   }
-  .testimonial-span{
+
+  .testimonial-span {
     padding-bottom: 15px;
     display: block;
     color: $caption-color;
-    @include font(20px,600); 
+    @include font(20px, 600);
     text-align: center;
   }
-  .testimonial-heading{
+
+  .testimonial-heading {
     padding-bottom: 45px;
     @extend %relative;
     color: $white;
-    @include font(22px,600); 
+    @include font(22px, 600);
     text-align: center;
-    &::before{
-      @include contentBefore("",8%,4px);
+
+    &::before {
+      @include contentBefore("", 8%, 4px);
       display: inline-block;
-      @include position(absolute,$bottom:54%,$left:46.3%);
+      @include position(absolute, $bottom: 54%, $left: 46.3%);
       background-color: $caption-color;
     }
   }
-  .fig-wrap{
+
+  .fig-wrap {
     @extend %flex-repeat;
     @extend %align-repeat;
     @include flex-direction(column);
   }
-  .title{
+
+  .title {
     padding: 12px 0;
     color: $white;
     @include font(12px);
   }
-  .star-list{
+
+  .star-list {
     @extend %flex-repeat;
   }
-  .star{
+
+  .star {
     text-indent: -9999px;
-    &::before{
+
+    &::before {
       @include contentBefore(\f005, $float: left);
       color: #797878;
       @include font(12px, $family: "FontAwesome");
       text-indent: 0;
     }
   }
-  .star:nth-child(1)::before{
+
+  .star:nth-child(1)::before {
     color: #E19215;
   }
-  .star:nth-child(2)::before{
+
+  .star:nth-child(2)::before {
     color: #E19215;
   }
+
   .wrap-feedback {
     padding: 0 10% 0 8%;
-}
+  }
 
-  .comments{
+  .comments {
     padding-top: 19px;
     color: $white;
     @include font(11px);
     text-align: center;
     line-height: 1.4;
   }
+
   .feedback-ctrl {
     width: 88.5%;
     @extend %flex-repeat;
     @extend %justify-repeat;
-    @include position(absolute,$top:60%,$left:5.8%);
-    }
+    @include position(absolute, $top: 60%, $left: 5.8%);
+  }
 }
 
-  .left-ctrl{
-    text-indent: -9999px;
-    @extend %transition-repeat;
-    @include for-hover-only{
-      &:hover::before{
-        border: 1px solid $caption-color;
-        color: $caption-color;
-        background-color: $white;
-      }
+.left-ctrl {
+  text-indent: -9999px;
+  @extend %transition-repeat;
+
+  @include for-hover-only {
+    &:hover::before {
+      border: 1px solid $caption-color;
+      color: $caption-color;
+      background-color: $white;
     }
-    &::before{
-      @include contentBefore(\f053, $float: left);
-      width: 30px;
-      height: 30px;
-      border: 1px solid $white;
-      border-radius: 3px;
-      color: $white;
-      @extend %flex-repeat;
-      @extend %align-repeat;
-      @include justify-content(center); 
-      @include font(16px,$family:"FontAwesome");
-      text-indent: 0;
-    }
-  }
-  .right-ctrl{
-    @extend .left-ctrl;
-    @include transform(rotate(180deg));
   }
 
+  &::before {
+    @include contentBefore(\f053, $float: left);
+    width: 30px;
+    height: 30px;
+    border: 1px solid $white;
+    border-radius: 3px;
+    color: $white;
+    @extend %flex-repeat;
+    @extend %align-repeat;
+    @include justify-content(center);
+    @include font(16px, $family: "FontAwesome");
+    text-indent: 0;
+  }
+}
+
+.right-ctrl {
+  @extend .left-ctrl;
+  @include transform(rotate(180deg));
+}
+
 /*testimonial  section end here*/
+/*news  section start here*/
+.news {
+  padding: 53px 0 160px;
+
+  .wrapper {
+    @extend %relative;
+  }
+
+  .news-list {
+    @extend %flex-repeat;
+    @extend %justify-repeat;
+  }
+
+  .news-item {
+    display: none;
+    @include flex(0, 0, 48.5%);
+    @extend %relative;
+  }
+
+  .news-item:nth-child(1) {
+    display: block;
+  }
+
+  .news-item:nth-child(2) {
+    display: block;
+  }
+
+  .new-content {
+    width: 88%;
+    padding: 11px 5% 11px 2%;
+    border: 1px solid #b7b7b7;
+    @include position(absolute, $bottom: -22.5%, $left: 24px);
+    background: $white;
+  }
+
+  .event-heading {
+    @include font(12px);
+    line-height: 1;
+  }
+
+  .news-span {
+    color: $black;
+    @include font(11px);
+  }
+
+  .conmtent-description {
+    padding-top: 18px;
+    color: #585858;
+    @include font(10px);
+    line-height: 1.5;
+  }
+
+  .event-heading {
+    padding: 0;
+  }
+
+  .news-slide {
+    @extend .slide-btn;
+    @include position($bottom: -39%);
+  }
+
+  .left-slide {
+    @extend .left-btn;
+  }
+
+  .right-slide {
+    @extend .right-btn;
+  }
+}
+
+/*news section end here*/
+/*query section start here*/
+.query{
+  padding: 20px 0;
+  background-color: $query;
+  .query-wrap{
+    @extend %flex-repeat;
+    @extend %justify-repeat;
+  }
+  .ask{
+    @include flex-basis(46%);
+    color: #1c3961;
+    @include font(18px);
+  }
+  .contact{
+    padding-left: 2.8%;
+    @include flex-basis(65%);
+    @extend %relative;
+    color: #1c3961;
+    @extend %transition-repeat;
+
+  @include for-hover-only {
+    &:hover{
+      color: $caption-color;
+    }
+  }
+    @include font(18px);
+    &::before{
+      @include contentBefore(\f879,$float:left);
+      @include position(absolute,$top:2px,$left:2px);
+      @include font($family:"FontAwesome");
+    }
+  }
+}
+/*query section end here*/

@@ -124,7 +124,7 @@
 // mixin for flex property
 @mixin flex($shirink, $grow, $basis) {
   -ms-flex: $shirink $grow $basis;
-  flex-basis: $shirink $grow $basis;
+  flex: $shirink $grow $basis;
 }
 
 // mixin for box sizing
