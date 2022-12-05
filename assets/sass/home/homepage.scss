@@ -1,14 +1,16 @@
 /*banner section start here*/
 .banner {
-  @include for-medium-screen{
+  @include for-medium-screen {
     @include position(relative);
   }
+
   .wrapper {
     width: 100%;
     @extend %relative;
-    @include for-medium-screen{
-      @include position(absolute,$top:50%,$left:50%);
-      @include transform(translate(-50%,-50%));
+
+    @include for-medium-screen {
+      @include position(absolute, $top: 50%, $left: 50%);
+      @include transform(translate(-50%, -50%));
     }
   }
 
@@ -27,18 +29,21 @@
   .slider-item:nth-child(1) {
     display: block;
   }
- 
+
   .slide-content {
     @include position(absolute, $bottom: 389px, $left: 34%);
     text-align: center;
-    @include for-large-screen{
-        @include position($bottom:350px,$left:31%);
+
+    @include for-large-screen {
+      @include position($bottom: 350px, $left: 31%);
     }
-    @include for-medium-screen{
-      @include position(absolute,$bottom:60%,$left:50%);
-      @include transform(translate(-50%,60%));
+
+    @include for-medium-screen {
+      @include position(absolute, $bottom: 60%, $left: 50%);
+      @include transform(translate(-50%, 60%));
     }
   }
+
   .banner-heading {
     padding-bottom: 9px;
     color: $white;
@@ -55,9 +60,10 @@
     @extend %flex-repeat;
     @extend %justify-repeat;
     @include position(absolute, $bottom: 316px, $left: 0);
-    @include for-medium-screen{
-      @include position(absolute,$bottom:60%,$left:50%);
-      @include transform(translate(-50%,60%));
+
+    @include for-medium-screen {
+      @include position(absolute, $bottom: 60%, $left: 50%);
+      @include transform(translate(-50%, 60%));
     }
   }
 
@@ -109,10 +115,12 @@
   .course-list {
     @extend %flex-repeat;
     @extend %justify-repeat;
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       @include flex-wrap(wrap);
     }
-    @include for-small-screen{
+
+    @include for-small-screen {
       @include flex-direction(column);
     }
   }
@@ -121,7 +129,8 @@
     padding-bottom: 10px;
     border: 1px solid #b7b7b7;
     @include flex-basis(31.7%);
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       @include flex-basis(47%);
       margin: 15px 0;
     }
@@ -187,31 +196,37 @@
         @include position(inherit, $top: 50%, $left: 4.8%);
         background-color: #939393;
       }
-      @include for-large-screen{
-        &::before{
-          @include position($left:5%);
+
+      @include for-large-screen {
+        &::before {
+          @include position($left: 5%);
         }
       }
-      @include for-lp-screen{
-        &::before{
-          @include position($left:5.5%);
+
+      @include for-lp-screen {
+        &::before {
+          @include position($left: 5.5%);
         }
       }
-      @include for-medium-screen{
-        &::before{
-          @include position($left:6%);
-        } 
+
+      @include for-medium-screen {
+        &::before {
+          @include position($left: 6%);
+        }
       }
-      @include for-mobile-screen{
+
+      @include for-mobile-screen {
         width: 100%;
-        @include position($bottom:-9%,$left:0);
+        @include position($bottom: -9%, $left: 0);
         text-align: center;
-        &::before{
-          @include position($left:47%);
+
+        &::before {
+          @include position($left: 47%);
         }
       }
-      @include for-small-screen{
-        @include position($bottom:-5%);
+
+      @include for-small-screen {
+        @include position($bottom: -5%);
       }
     }
 
@@ -259,7 +274,8 @@
   .wrapper {
     @extend %flex-repeat;
     @extend %justify-repeat;
-    @include for-small-screen{
+
+    @include for-small-screen {
       margin-left: 4%;
       @include flex-direction(column);
     }
@@ -342,23 +358,28 @@
     @extend %flex-repeat;
     @include flex-wrap(wrap);
     gap: 0 98px;
-    @include for-large-screen{
-      gap:0 80px;
+
+    @include for-large-screen {
+      gap: 0 80px;
     }
-    @include for-medium-screen{
-      gap:0 62px;
+
+    @include for-medium-screen {
+      gap: 0 62px;
     }
-    @include for-mobile-screen{
-      gap:0 40px;
+
+    @include for-mobile-screen {
+      gap: 0 40px;
     }
-    @include for-small-screen{
+
+    @include for-small-screen {
       gap: 0 24px;
     }
   }
 
   .gallery-item {
     @include flex(0, 0, 17.9%);
-    @include for-medium-screen{
+
+    @include for-medium-screen {
       @include flex(0, 0, 26.9%);
     }
   }
@@ -372,7 +393,8 @@
   .event-wrap {
     @extend %flex-repeat;
     @extend %justify-repeat;
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       @include flex-direction(column);
     }
   }
@@ -380,16 +402,20 @@
   .event-info {
     @include flex-basis(36%);
     @extend %relative;
-    @include for-lp-screen{
+
+    @include for-lp-screen {
       @include flex-basis(39%);
     }
-    @include for-medium-screen{
+
+    @include for-medium-screen {
       @include flex-basis(41%);
     }
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       margin: 15px 0;
     }
-    @include for-small-screen{
+
+    @include for-small-screen {
       margin: 30px 0;
     }
   }
@@ -397,7 +423,8 @@
   .second {
     @extend .event-info;
     margin-right: 12.7%;
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       margin: 0;
     }
   }
@@ -408,21 +435,26 @@
     @include position(absolute, 2, $top: 12px, $left: 72%);
     background-color: $white;
     @include boxShadow(0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%));
-    @include for-large-screen{
+
+    @include for-large-screen {
       width: 65%;
     }
-    @include for-lp-screen{
+
+    @include for-lp-screen {
       width: 62%;
-      @include position($left:53%)
+      @include position($left: 53%)
     }
-    @include for-medium-screen{
-      @include position($left:44%);
+
+    @include for-medium-screen {
+      @include position($left: 44%);
     }
-    @include for-mobile-screen{
-      @include position($top:82px,$left:39%);
+
+    @include for-mobile-screen {
+      @include position($top: 82px, $left: 39%);
     }
-    @include for-mobile-screen{
-      @include position($top:47px,$left:39%);
+
+    @include for-mobile-screen {
+      @include position($top: 47px, $left: 39%);
     }
   }
 
@@ -489,23 +521,28 @@
       border: 1px solid #fff;
       display: block;
       background-color: transparent;
-      @include position(absolute,$top:8px,$left:8px);
+      @include position(absolute, $top: 8px, $left: 8px);
     }
-    @include for-lp-screen{
-      &::before{
-        @include contentBefore("",$height:280px);
+
+    @include for-lp-screen {
+      &::before {
+        @include contentBefore("", $height: 280px);
       }
     }
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       margin: 0 6% 0 6%;
-      &::before{
+
+      &::before {
         @include contentBefore("", 96%, 295px);
-        @include position($left:7px);
+        @include position($left: 7px);
       }
     }
-    @include for-small-screen{
+
+    @include for-small-screen {
       margin: 0 8% 0 8%;
-      &::before{
+
+      &::before {
         @include contentBefore("", 94%, 341px);
       }
     }
@@ -590,7 +627,8 @@
     @extend %flex-repeat;
     @extend %justify-repeat;
     @include position(absolute, $top: 60%, $left: 5.8%);
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       width: 100%;
       @include position($left: 0);
     }
@@ -623,8 +661,8 @@
     text-indent: 0;
   }
 
-  @include for-mobile-screen{
-    &::before{
+  @include for-mobile-screen {
+    &::before {
       width: 18px;
       height: 18px;
       @include font(12px);
@@ -641,7 +679,8 @@
 /*news  section start here*/
 .news {
   padding: 53px 0 160px;
-  @include for-small-screen{
+
+  @include for-small-screen {
     padding: 53px 0 85px;
   }
 
@@ -652,7 +691,8 @@
   .news-list {
     @extend %flex-repeat;
     @extend %justify-repeat;
-    @include for-small-screen{
+
+    @include for-small-screen {
       @include flex-direction(column);
     }
   }
@@ -661,7 +701,8 @@
     display: none;
     @include flex(0, 0, 48.5%);
     @extend %relative;
-    @include for-small-screen{
+
+    @include for-small-screen {
       margin-bottom: 60px;
     }
   }
@@ -680,8 +721,9 @@
     border: 1px solid #b7b7b7;
     @include position(absolute, $bottom: -22.5%, $left: 24px);
     background: $white;
-    @include for-mobile-screen{
-      @include position($bottom:-18.5%,$left:16px);
+
+    @include for-mobile-screen {
+      @include position($bottom: -18.5%, $left: 16px);
     }
   }
 
@@ -709,10 +751,12 @@
   .news-slide {
     @extend .slide-btn;
     @include position($bottom: -39%);
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       @include position($bottom: -52%);
     }
-    @include for-small-screen{
+
+    @include for-small-screen {
       @include position($bottom: -8%);
     }
   }
@@ -728,63 +772,75 @@
 
 /*news section end here*/
 /*query section start here*/
-.query{
+.query {
   padding: 20px 0;
   background-color: $query;
-  .query-wrap{
+
+  .query-wrap {
     @extend %flex-repeat;
     @extend %justify-repeat;
-    @include for-small-screen{
+
+    @include for-small-screen {
       @include flex-direction(column);
       @include align-items(center);
     }
   }
-  .ask{
+
+  .ask {
     @include flex-basis(46%);
     color: #1c3961;
-    @include font(18px,$family:sans-serif);
-    @include for-mobile-screen{
-    @include flex-basis(65%);
-    
-    @include for-small-screen{
-      margin-bottom: 11px;
-    }
+    @include font(18px, $family: sans-serif);
+
+    @include for-mobile-screen {
+      @include flex-basis(65%);
+
+      @include for-small-screen {
+        margin-bottom: 11px;
+      }
 
     }
   }
-  .contact{
+
+  .contact {
     padding-left: 2.8%;
     @include flex-basis(65%);
     @extend %relative;
     color: #1c3961;
     @extend %transition-repeat;
 
-  @include for-hover-only {
-    &:hover{
-      color: $caption-color;
+    @include for-hover-only {
+      &:hover {
+        color: $caption-color;
+      }
     }
-  }
-  @include for-lp-screen{
-    @include flex-basis(55%);
-  }
-  @include for-medium-screen{
-    padding-left: 3.8%;
-    @include flex-basis(49%);
 
-  }
-  @include for-mobile-screen{
-    padding-left: 4.8%;
-    @include flex-basis(36%);
-  }
-  @include for-small-screen{
-    padding-left: 9.8%;
-  }
+    @include for-lp-screen {
+      @include flex-basis(55%);
+    }
+
+    @include for-medium-screen {
+      padding-left: 3.8%;
+      @include flex-basis(49%);
+
+    }
+
+    @include for-mobile-screen {
+      padding-left: 4.8%;
+      @include flex-basis(36%);
+    }
+
+    @include for-small-screen {
+      padding-left: 9.8%;
+    }
+
     @include font(18px);
-    &::before{
-      @include contentBefore(\f879,$float:left);
-      @include position(absolute,$top:2px,$left:2px);
-      @include font($family:"FontAwesome");
+
+    &::before {
+      @include contentBefore(\f879, $float: left);
+      @include position(absolute, $top: 2px, $left: 2px);
+      @include font($family: "FontAwesome");
     }
   }
 }
+
 /*query section end here*/

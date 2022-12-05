@@ -21,10 +21,12 @@ footer {
     @extend %flex-repeat;
     @extend %justify-repeat;
     @include font(14px, $family: "'Raleway',sans-serif");
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       @include flex-wrap(wrap);
     }
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       margin-left: 2%;
       @include flex-direction(column);
     }
@@ -67,6 +69,10 @@ footer {
       }
     }
 
+    @include for-small-screen {
+      padding-left: 6%;
+    }
+
     &::before {
       @include contentBefore(\f0e0);
       @include position(absolute, $top: 0, $left: 0);
@@ -95,6 +101,14 @@ footer {
       color: $white;
       @include font(10px, $family: "FontAwesome");
     }
+
+    @include for-small-screen {
+      padding-left: 6%;
+
+      &::before {
+        @include position($left: -12px);
+      }
+    }
   }
 
   .footer-item:nth-child(2) {
@@ -114,13 +128,13 @@ footer {
     @include flex-basis(23%);
   }
 
-  @include for-mobile-screen{
-    .footer-list{
-    .footer-item{
-      margin: 15px 0;
-      @include flex-basis(45%);
+  @include for-mobile-screen {
+    .footer-list {
+      .footer-item {
+        margin: 15px 0;
+        @include flex-basis(45%);
+      }
     }
-  }
   }
 
   .link-list {
@@ -166,6 +180,10 @@ footer {
       @include position(absolute, $top: 2px, $left: 0);
       background-color: #ef0000;
     }
+
+    @include for-small-screen {
+      padding: 0 0 19px 20%;
+    }
   }
 
   .courses-title {
@@ -185,6 +203,10 @@ footer {
     background: none;
     @include font(9px);
     outline: none;
+
+    @include for-small-screen {
+      margin-bottom: 20px;
+    }
   }
 
   .msg {
@@ -211,83 +233,101 @@ footer {
     }
   }
 
-  .social-list{
+  .social-list {
     padding-bottom: 22px;
     @extend %flex-repeat;
     @include justify-content(center);
     @extend %relative;
     gap: 16px;
-    &::before{
+
+    &::before {
       @include contentBefore("", 40.5%, 2px, $float: left);
-      @include position(absolute,$top:8px,$left:0);
+      @include position(absolute, $top: 8px, $left: 0);
       background-color: $white;
     }
-    &::after{
+
+    &::after {
       @include contentBefore("", 40.5%, 2px, $float: right);
-      @include position(absolute,$top:8px,$right:0);
+      @include position(absolute, $top: 8px, $right: 0);
       background-color: $white;
     }
-    @include for-large-screen{
-      &::before{
-        @include contentBefore("",$width:37.5%);
+
+    @include for-large-screen {
+      &::before {
+        @include contentBefore("", $width: 37.5%);
       }
-      &::after{
-        @include contentBefore("",$width:37.5%);
-      }
-    }
-    @include for-mobile-screen{
-      &::before{
-        @include contentBefore("",$width:33.5%);
-      }
-      &::after{
-        @include contentBefore("",$width:33.5%);
+
+      &::after {
+        @include contentBefore("", $width: 37.5%);
       }
     }
-    @include for-small-screen{
-      &::before{
-        @include contentBefore("",$width:25.5%);
+
+    @include for-mobile-screen {
+      &::before {
+        @include contentBefore("", $width: 33.5%);
       }
-      &::after{
-        @include contentBefore("",$width:25.5%);
+
+      &::after {
+        @include contentBefore("", $width: 33.5%);
+      }
+    }
+
+    @include for-small-screen {
+      &::before {
+        @include contentBefore("", $width: 25.5%);
+      }
+
+      &::after {
+        @include contentBefore("", $width: 25.5%);
       }
     }
   }
-  .icon{
+
+  .icon {
     @extend %flex-repeat;
     @extend %align-repeat;
     color: $white;
     text-indent: -9999px;
     @extend %transition-repeat;
-    &::before{
+
+    &::before {
       @include contentBefore(\f082, $float: left);
       @include font(13px, $family: "FontAwesome");
       text-indent: 0;
     }
+
     @include for-hover-only {
       &:hover {
         color: $caption-color;
       }
     }
   }
-  .twitter::before{
+
+  .twitter::before {
     @include contentBefore(\f099);
   }
-  .skype::before{
+
+  .skype::before {
     @include contentBefore(\f17e);
   }
-  .youtube::before{
+
+  .youtube::before {
     @include contentBefore(\f167);
   }
-  .instagram::before{
+
+  .instagram::before {
     @include contentBefore(\f16d);
   }
-  .copy{
-    @include font(14px,$family:"sans-serif");
+
+  .copy {
+    @include font(14px, $family: "sans-serif");
     text-align: center;
-    @include for-mobile-screen{
+
+    @include for-mobile-screen {
       line-height: 1.5;
     }
-    @include for-small-screen{
+
+    @include for-small-screen {
       @include font(13px);
     }
   }

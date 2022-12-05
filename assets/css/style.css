@@ -6,13 +6,87 @@
    v2.0 | 20110126
    License: none (public domain)
    ========================================================================== */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -22,8 +96,17 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -1333,6 +1416,11 @@ footer .email, footer .footer-call, footer header .call, header footer .call {
     color: #019450;
   }
 }
+@media (max-width: 480px) {
+  footer .email, footer .footer-call, footer header .call, header footer .call {
+    padding-left: 6%;
+  }
+}
 footer .email::before, footer .footer-call::before, footer header .call::before, header footer .call::before {
   content: "\f0e0";
   position: absolute;
@@ -1359,6 +1447,14 @@ footer .add::before {
   color: #fff;
   font-size: 10px;
   font-family: "FontAwesome";
+}
+@media (max-width: 480px) {
+  footer .add {
+    padding-left: 6%;
+  }
+  footer .add::before {
+    left: -12px;
+  }
 }
 footer .footer-item:nth-child(2) {
   margin-left: 1%;
@@ -1435,6 +1531,11 @@ footer .course-name::before {
   left: 0;
   background-color: #ef0000;
 }
+@media (max-width: 480px) {
+  footer .course-name {
+    padding: 0 0 19px 20%;
+  }
+}
 footer .courses-title {
   font-size: 13px;
 }
@@ -1450,6 +1551,11 @@ footer .input, footer .msg {
   background: none;
   font-size: 9px;
   outline: none;
+}
+@media (max-width: 480px) {
+  footer .input, footer .msg {
+    margin-bottom: 20px;
+  }
 }
 footer .msg {
   resize: none;
