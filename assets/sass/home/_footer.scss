@@ -21,6 +21,13 @@ footer {
     @extend %flex-repeat;
     @extend %justify-repeat;
     @include font(14px, $family: "'Raleway',sans-serif");
+    @include for-mobile-screen{
+      @include flex-wrap(wrap);
+    }
+    @include for-mobile-screen{
+      margin-left: 2%;
+      @include flex-direction(column);
+    }
   }
 
   .footer-item:nth-child(1) {
@@ -93,6 +100,7 @@ footer {
   .footer-item:nth-child(2) {
     margin-left: 1%;
     @include flex-basis(20%);
+    @include flex-basis(15%);
   }
 
   .footer-item:nth-child(3) {
@@ -104,6 +112,15 @@ footer {
 
   .footer-item:nth-child(4) {
     @include flex-basis(23%);
+  }
+
+  @include for-mobile-screen{
+    .footer-list{
+    .footer-item{
+      margin: 15px 0;
+      @include flex-basis(45%);
+    }
+  }
   }
 
   .link-list {
@@ -198,7 +215,42 @@ footer {
     padding-bottom: 22px;
     @extend %flex-repeat;
     @include justify-content(center);
-    gap: 16px
+    @extend %relative;
+    gap: 16px;
+    &::before{
+      @include contentBefore("", 40.5%, 2px, $float: left);
+      @include position(absolute,$top:8px,$left:0);
+      background-color: $white;
+    }
+    &::after{
+      @include contentBefore("", 40.5%, 2px, $float: right);
+      @include position(absolute,$top:8px,$right:0);
+      background-color: $white;
+    }
+    @include for-large-screen{
+      &::before{
+        @include contentBefore("",$width:37.5%);
+      }
+      &::after{
+        @include contentBefore("",$width:37.5%);
+      }
+    }
+    @include for-mobile-screen{
+      &::before{
+        @include contentBefore("",$width:33.5%);
+      }
+      &::after{
+        @include contentBefore("",$width:33.5%);
+      }
+    }
+    @include for-small-screen{
+      &::before{
+        @include contentBefore("",$width:25.5%);
+      }
+      &::after{
+        @include contentBefore("",$width:25.5%);
+      }
+    }
   }
   .icon{
     @extend %flex-repeat;
@@ -232,6 +284,12 @@ footer {
   .copy{
     @include font(14px,$family:"sans-serif");
     text-align: center;
+    @include for-mobile-screen{
+      line-height: 1.5;
+    }
+    @include for-small-screen{
+      @include font(13px);
+    }
   }
 }
 

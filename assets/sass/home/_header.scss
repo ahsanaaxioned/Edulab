@@ -20,6 +20,7 @@
 }
 
 header {
+  @extend %relative;
   .header1 {
     padding: 10px 0;
     background-color: $header-color;
@@ -28,20 +29,28 @@ header {
       @extend %flex-repeat;
       @extend %align-repeat;
       @extend %justify-repeat;
+      @include for-small-screen{
+        margin: 10px 0;
+        @include flex-direction(column);
+      }
     }
   }
 
   .link {
     @extend %flex-repeat;
     @include flex-basis(62.8%);
+    @include for-mobile-screen{
+      @include flex-basis(38.8%);
+    }
   }
 
   .email {
     @extend %flex-repeat;
     @extend %align-repeat;
     color: $white;
-    @include font(10px, 400);
+    @include font(11px, 400);
     @extend %transition-repeat;
+    @extend %relative;
 
     @include for-hover-only {
       &:hover {
@@ -55,11 +64,20 @@ header {
       @include font(9px, $family: "FontAwesome");
 
     }
+    @include for-small-screen{
+      &::before{
+        @include position(absolute,$top:2px,$left:-13px);
+      }
+    }
   }
 
   .call {
     margin-left: 6%;
     @extend .email;
+
+    @include for-small-screen{
+      margin-left: 12%;
+    }
 
     &::before {
       margin-right: 9px;
@@ -71,6 +89,9 @@ header {
     @extend %flex-repeat;
     @include flex-basis(20%);
     gap: 12px;
+    @include for-small-screen{
+      margin: 5px 0;
+    }
   }
 
   .social-item {
@@ -110,7 +131,7 @@ header {
 
   .login {
     color: $white;
-    @include font(10px);
+    @include font(11px);
     @extend %transition-repeat;
 
     @include for-hover-only {
@@ -121,6 +142,9 @@ header {
   }
 
   .header2 {
+    @include for-small-screen{
+      position: relative;
+    }
     .wrapper {
       @extend %flex-repeat;
       @extend %align-repeat;
@@ -130,6 +154,29 @@ header {
     .hamburger {
       display: none;
       cursor: pointer;
+      @extend %transition-repeat;
+      @include for-mobile-screen{
+        display: block;
+        @include position(absolute,20,$top:50%,$right:9px);
+        &:hover ~ .navbar{
+          @include position($top:102px,$left:0);
+        }
+        &:hover .bar2{
+          display: none;
+        }
+        &:hover .bar1{
+          @include transform(translateY(8px)rotate(45deg));
+        }
+        &:hover .bar3{
+          @include transform(translateY(1px)rotate(-45deg));
+        }
+      }
+      @include for-mobile-screen{
+        @include position($top:26%);
+        &:hover ~ .navbar{
+          @include position($top:63px);
+        }
+      }
     }
 
     .bar {
@@ -137,19 +184,30 @@ header {
       height: 2px;
       margin: 5px;
       display: block;
-      background-color: $header-color;
+      background-color: $caption-color;
       text-indent: -9999px;
       @extend %transition-repeat;
     }
 
     .navbar {
       @include flex-basis(49.5%);
+      @include for-mobile-screen{
+        width: 100%;
+        height: 100vh;
+        @include position(absolute,6,0%,$left:100%);
+        background-color: $caption-color;
+      }
     }
 
     .nav-list {
       @extend %flex-repeat;
       @extend %align-repeat;
       gap: 12px;
+      @include for-mobile-screen{
+        margin: 64px 0;
+        @include flex-direction(column);
+        gap: 50px;
+      }
     }
 
     .nav-item:nth-child(2) {
@@ -171,6 +229,9 @@ header {
           color: $caption-color;
         }
       }
+      @include for-mobile-screen{
+        color: $white;
+      }
     }
 
     .down {
@@ -178,7 +239,7 @@ header {
 
       &::before {
         @include contentBefore(\f078, $float: right);
-        @include position(absolute, $top: 36%, $right: -23%);
+        @include position(absolute, $top: 28%, $right: -23%);
         color: #363636;
         @include font(10px, $family: "FontAwesome");
       }
@@ -188,9 +249,19 @@ header {
           color: $caption-color;
         }
       }
+      @include for-mobile-screen{
+        &::before{
+          color: $white;
+        }
+      }
     }
   }
 
+  @include for-large-screen{
+    .social-list{
+      @include flex-basis(24%)
+    }
+  }
 }
 
 /* header end here*/
